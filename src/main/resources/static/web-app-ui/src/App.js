@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import LoginComponent from "./component/login/LoginComponent";
+import UserDetailComponent from "./component/userDetail/UserDetailComponent";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <h1 className="text-center" style={style}> React User Application </h1>
           <Switch>
             <Route path="/" exact component={LoginComponent} />
+            <Route path="/user-detail" component={UserDetailComponent} />
           </Switch>
         </div>
       </Router>

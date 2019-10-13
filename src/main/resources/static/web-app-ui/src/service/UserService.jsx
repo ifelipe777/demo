@@ -7,6 +7,10 @@ class UserService {
     validateUser(user) {
         return axios.post(USER_API_BASE_URL + "/user", user);
     }
+
+    findUser(username) {
+        return axios.get(USER_API_BASE_URL + "/user/find/" + username);
+    }
 }
 
 export default new UserService();

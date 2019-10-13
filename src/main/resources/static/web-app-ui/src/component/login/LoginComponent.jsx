@@ -26,7 +26,8 @@ class LoginComponent extends Component {
         UserService.validateUser(user)
             .then(res => {
                 this.setState({message: 'User validated successful.'});
-                //this.props.history.push('/home');
+                window.localStorage.setItem("username", this.state.username);
+                this.props.history.push('/user-detail');
             })
     }
     render() {
@@ -46,6 +47,9 @@ class LoginComponent extends Component {
                     </div>
                     <button className="btn btn-success" onClick={this.login}>Log in</button>
                 </form>
+                <div>
+                    <h2>{this.state.message}</h2>
+                </div>
             </div>
         );
     }

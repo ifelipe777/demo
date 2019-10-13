@@ -13,9 +13,9 @@ public class DemoLoggerAspect {
 
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    @Around("execution(* com.example.demo.service.UserServiceImpl.*.*(..))")
-    public void logFindUserEvent(ProceedingJoinPoint joinPoint) throws Throwable {
-        joinPoint.proceed();
+    @Around("execution(* com.example.demo.service.UserServiceImpl.*(..))")
+    public Object logFindUserEvent(ProceedingJoinPoint joinPoint) throws Throwable {
         LOGGER.info("Log validate user event" + new java.util.Date() + " - " + joinPoint.getSignature().getName());
+        return joinPoint.proceed();
     }
 }
