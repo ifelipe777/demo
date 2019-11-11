@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import LoginComponent from "./component/login/LoginComponent";
 import UserDetailComponent from "./component/userDetail/UserDetailComponent";
+import UserUnauthorizedComponent from "./component/error/UserUnauthorizedComponent";
 
 function App() {
   return (
