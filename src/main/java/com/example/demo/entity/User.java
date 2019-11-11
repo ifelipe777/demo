@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.security.UserRole;
 import com.example.demo.util.checker.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +15,5 @@ public class User {
     @Email
     private String username;
     private String password;
+    private UserRole role;
 }
